@@ -6,6 +6,14 @@ $(document).ready(function() {
         $('#log').append('<div><strong>' + data.text + '</strong></div>');
     });
     
+    socket.on('otherUserDisconnect', function(data) {
+        $('#log').append('<div><strong>' + data + ' disconnected</strong></div>');
+    });
+    
+    socket.on('message', function(data) {
+        $('#log').append('<div><strong>' + data.user + ': ' + data.message + '</strong></div>');
+    })
+    
     var name;
     
     $('#user-save').click(function() {
@@ -22,5 +30,16 @@ $(document).ready(function() {
             $('#send').prop('disabled', false);
             socket.emit('user', name);
         }
-    })
-})
+    });
+    
+    $('#send').click(function() {
+        var input = $('#message');
+        var text = input.val().trim();
+        if(text.length > 0) {
+            socket.emit('message', text);
+        }
+        input.val('');
+    });
+    
+    
+});

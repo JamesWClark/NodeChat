@@ -23,4 +23,26 @@ io.sockets.on('connection', function(socket) {
         console.log('users : ' + users.length);
         socket.broadcast.emit('otherUserConnect', name);
     });
+    
+    socket.on('otherUserConnect', function(data) {
+        $('#log').append('<div><strong>' + data + ' connected</strong></div>');
+    });
+    
+    socket.on('disconnect', function() {
+        if(!socket.user) {
+            return;
+        }
+        if(users.indexOf(socket.user) > -1) {
+            console.log(socket.user + ' disconnected');
+            users.splice(users.indexOf(socket.user), 1);
+            socket.broadcast.emit('otherUserDisconnect', socket.user);
+        }
+    });
+    
+    socket.on('message', function(data) {
+        io.sockets.emit('message', {
+            user: socket.user,
+            message: data
+        });
+    });
 });
