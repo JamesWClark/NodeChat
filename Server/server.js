@@ -2,10 +2,12 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 
-app.use('/', express.static(__dirname));
+var webroot = __dirname + '/../WebClient/';
+
+app.use('/', express.static(webroot));
 
 var server = http.listen(80, function() {
-    console.log('hosting from ' + __dirname);
+    console.log('hosting from ' + webroot);
     console.log('server listening on http://localhost/');
 });
 
@@ -14,6 +16,9 @@ var users = [];
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket) {
+    
+    console.log('a user connected');
+    
     socket.emit('welcome', { text : 'OH HAI' });
     
     socket.on('user', function(name) {
