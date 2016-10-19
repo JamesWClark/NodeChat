@@ -1,4 +1,12 @@
+#########################
+## GITIGNORE OSX STUFF ##
+#########################
+
 .DS_Store
+
+############################
+## GITIGNORE NODEJS STUFF ##
+############################
 
 # Logs
 logs
@@ -108,3 +116,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
