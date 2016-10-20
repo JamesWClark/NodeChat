@@ -31,10 +31,6 @@ io.sockets.on('connection', function(socket) {
         socket.broadcast.emit('otherUserConnect', name);
     });
     
-    socket.on('otherUserConnect', function(data) {
-        $('#log').append('<div><strong>' + data + ' connected</strong></div>');
-    });
-    
     socket.on('disconnect', function() {
         if(!socket.user) {
             return;
