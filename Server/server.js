@@ -17,7 +17,9 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket) {
     
-    console.log('a user connected');
+    var clientIp = socket.request.connection.remoteAddress;
+    
+    console.log('socket connected from ' + clientIp);
     
     socket.emit('welcome', { text : 'OH HAI' });
     
@@ -45,6 +47,7 @@ io.sockets.on('connection', function(socket) {
     });
     
     socket.on('message', function(data) {
+        console.log(socket.user + ': ' + data);
         io.sockets.emit('message', {
             user: socket.user,
             message: data
