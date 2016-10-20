@@ -32,10 +32,11 @@
 		E612E1791DB1B3290098D332 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612E1611DB1B3290098D332 /* SSLSecurity.swift */; };
 		E612E17A1DB1B3290098D332 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612E1621DB1B3290098D332 /* WebSocket.swift */; };
 		E6DA16171DB1AB380096B1D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA16161DB1AB380096B1D7 /* AppDelegate.swift */; };
-		E6DA16191DB1AB380096B1D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA16181DB1AB380096B1D7 /* ViewController.swift */; };
+		E6DA16191DB1AB380096B1D7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA16181DB1AB380096B1D7 /* ChatViewController.swift */; };
 		E6DA161C1DB1AB380096B1D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DA161A1DB1AB380096B1D7 /* Main.storyboard */; };
 		E6DA161E1DB1AB380096B1D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DA161D1DB1AB380096B1D7 /* Assets.xcassets */; };
 		E6DA16211DB1AB380096B1D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DA161F1DB1AB380096B1D7 /* LaunchScreen.storyboard */; };
+		E6DB9C2A1DB7F66500B0AFF2 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB9C291DB7F66500B0AFF2 /* UsernameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,11 +67,12 @@
 		E612E1621DB1B3290098D332 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		E6DA16131DB1AB380096B1D7 /* iOSNativeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSNativeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DA16161DB1AB380096B1D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6DA16181DB1AB380096B1D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6DA16181DB1AB380096B1D7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E6DA161B1DB1AB380096B1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6DA161D1DB1AB380096B1D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6DA16201DB1AB380096B1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6DA16221DB1AB380096B1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6DB9C291DB7F66500B0AFF2 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				E6DA16161DB1AB380096B1D7 /* AppDelegate.swift */,
-				E6DA16181DB1AB380096B1D7 /* ViewController.swift */,
+				E6DA16181DB1AB380096B1D7 /* ChatViewController.swift */,
 				E6DA161A1DB1AB380096B1D7 /* Main.storyboard */,
+				E6DB9C291DB7F66500B0AFF2 /* UsernameViewController.swift */,
 				E6DA161D1DB1AB380096B1D7 /* Assets.xcassets */,
 				E6DA161F1DB1AB380096B1D7 /* LaunchScreen.storyboard */,
 				E6DA16221DB1AB380096B1D7 /* Info.plist */,
@@ -237,7 +240,8 @@
 				E612E16B1DB1B3290098D332 /* SocketEngineSpec.swift in Sources */,
 				E612E1631DB1B3290098D332 /* SocketAckEmitter.swift in Sources */,
 				E612E1671DB1B3290098D332 /* SocketEngine.swift in Sources */,
-				E6DA16191DB1AB380096B1D7 /* ViewController.swift in Sources */,
+				E6DB9C2A1DB7F66500B0AFF2 /* UsernameViewController.swift in Sources */,
+				E6DA16191DB1AB380096B1D7 /* ChatViewController.swift in Sources */,
 				E6DA16171DB1AB380096B1D7 /* AppDelegate.swift in Sources */,
 				E612E1701DB1B3290098D332 /* SocketIOClientConfiguration.swift in Sources */,
 				E612E1791DB1B3290098D332 /* SSLSecurity.swift in Sources */,

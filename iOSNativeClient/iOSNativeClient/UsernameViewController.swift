@@ -10,6 +10,9 @@ import UIKit
 
 class UsernameViewController: UIViewController {
 
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var btnSubmitUsername: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +24,20 @@ class UsernameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Action Outlets
+    
+    @IBAction func btnSubmitUsernamePressed(_ sender: UIButton) {
+        
+    }
+    
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if btnSubmitUsername === sender as? UIButton {
+            let chatVC = segue.destination as! ChatViewController
+            chatVC.username = txtUsername.text
+        }
     }
-    */
-
 }
