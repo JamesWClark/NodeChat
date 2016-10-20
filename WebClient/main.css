@@ -11,3 +11,7 @@
 #controls {
     display: none;
 }
+
+#error {
+  color: red;
+}

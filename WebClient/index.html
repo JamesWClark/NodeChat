@@ -10,20 +10,23 @@
 <body>
     <div id="content">
         <h1>Chat</h1>
-        <div id="user">
-            <span>My name is: </span>
-            <input type="text" id="user-name">
-            <button id="user-save">Save</button>
-        </div>
-        <br>
-        <div id="log">
-            <div class="message">Message Log:</div>
-        </div>
-        <br>
-        <div id="controls">
-            <input type="text" id="message" disabled="true">
+        <div id="error"></div>
+        <div id="noerror">
+            <div id="user">
+                <span>My name is: </span>
+                <input type="text" id="user-name">
+                <button id="user-save">Save</button>
+            </div>
             <br>
-            <button id="send" disabled="true">Send</button>
+            <div id="log">
+                <div class="message">Message Log:</div>
+            </div>
+            <br>
+            <div id="controls">
+                <input type="text" id="message" disabled="true">
+                <br>
+                <button id="send" disabled="true">Send</button>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
