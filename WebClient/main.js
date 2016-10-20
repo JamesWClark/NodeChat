@@ -1,12 +1,17 @@
 $(document).ready(function() {
     var socketServer = 'http://192.168.1.8/';
     var socket = io.connect(socketServer);
-
+    var user;
+    
     socket.on('connect', function() {
         $('#error').hide();
         $('#error').html('');
         $('#noerror').show();
-        console.log('connected :)');
+        
+        // in case the server is coming back online for an active user
+        if(user) {
+            socket.emit('user', name);
+        }
     });
 
     socket.io.on('connect_error', function(err) {
@@ -18,6 +23,10 @@ $(document).ready(function() {
     socket.on('welcome', function(data) {
         $('#log').append('<div><strong>' + data.text + '</strong></div>');
     });
+    
+    socket.on('otherUserConnect', function(data) {
+        $('#log').append('<div><strong>' + data + ' connected</strong></div>');
+    });
 
     socket.on('otherUserDisconnect', function(data) {
         $('#log').append('<div><strong>' + data + ' disconnected</strong></div>');
@@ -27,13 +36,9 @@ $(document).ready(function() {
         $('#log').append('<div><strong>' + data.user + ': ' + data.message + '</strong></div>');
     })
 
-    var name;
-
     $('#user-save').click(function() {
-        console.log('click');
         var username = $('#user-name');
         var txt = username.val().trim();
-        console.log(txt);
         if(txt.length > 0) {
             name = txt;
             username.prop('disabled', true);
@@ -41,7 +46,8 @@ $(document).ready(function() {
             $('#controls').show();
             $('#message').prop('disabled', false);
             $('#send').prop('disabled', false);
-            socket.emit('user', name);
+            user = name;
+            socket.emit('user', user);
         }
     });
 
