@@ -12,7 +12,7 @@
 		E65EDF711DB63AAE006E1B51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65EDF6F1DB63AAE006E1B51 /* Main.storyboard */; };
 		E65EDF731DB63AAE006E1B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E65EDF721DB63AAE006E1B51 /* Assets.xcassets */; };
 		E65EDF761DB63AAE006E1B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65EDF741DB63AAE006E1B51 /* LaunchScreen.storyboard */; };
-		E68A85481DB7D2DF00D29644 /* Site in Resources */ = {isa = PBXBuildFile; fileRef = E68A85471DB7D2DF00D29644 /* Site */; };
+		E6DB9C2C1DB88DED00B0AFF2 /* WebClient in Resources */ = {isa = PBXBuildFile; fileRef = E6DB9C2B1DB88DED00B0AFF2 /* WebClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		E65EDF721DB63AAE006E1B51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E65EDF751DB63AAE006E1B51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E65EDF771DB63AAE006E1B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E68A85471DB7D2DF00D29644 /* Site */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Site; sourceTree = "<group>"; };
+		E6DB9C2B1DB88DED00B0AFF2 /* WebClient */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WebClient; path = ../../WebClient; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				E65EDF721DB63AAE006E1B51 /* Assets.xcassets */,
 				E65EDF741DB63AAE006E1B51 /* LaunchScreen.storyboard */,
 				E65EDF771DB63AAE006E1B51 /* Info.plist */,
-				E68A85471DB7D2DF00D29644 /* Site */,
+				E6DB9C2B1DB88DED00B0AFF2 /* WebClient */,
 			);
 			path = iOSLocalWebViewClient;
 			sourceTree = "<group>";
@@ -127,8 +127,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E65EDF761DB63AAE006E1B51 /* LaunchScreen.storyboard in Resources */,
-				E68A85481DB7D2DF00D29644 /* Site in Resources */,
 				E65EDF731DB63AAE006E1B51 /* Assets.xcassets in Resources */,
+				E6DB9C2C1DB88DED00B0AFF2 /* WebClient in Resources */,
 				E65EDF711DB63AAE006E1B51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let page = Bundle.main.path(forResource: "site/index", ofType: "html")!
+        let page = Bundle.main.path(forResource: "WebClient/index", ofType: "html")!
         var content: String?
         do {
             content = try String(contentsOfFile: page, encoding: String.Encoding.utf8)
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             print("error: \(error)")
         }
         
-        let base = Bundle.main.path(forResource: "site/main", ofType: "css")!
+        let base = Bundle.main.path(forResource: "WebClient/main", ofType: "css")!
         let baseUrl = URL(fileURLWithPath: base)
         webView.loadHTMLString(content!, baseURL: baseUrl)
     }
