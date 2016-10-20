@@ -33,6 +33,15 @@ class ChatViewController: UIViewController {
         addMessageHandlers()
         socket!.connect()
     }
+    
+    // update the UI with the latest message
+    func messagePump(msg: String) {
+        chatLabel.text = chatLabel.text + "\n\(msg)"
+        
+        // auto scroll the text view with an animation
+        let range = NSMakeRange(self.chatLabel.text.characters.count - 1, 0)
+        self.chatLabel.scrollRangeToVisible(range)
+    }
 
     // MARK: Socket Handlers
     
@@ -56,19 +65,30 @@ class ChatViewController: UIViewController {
             if let arr = data as? [[String: Any]] {
                 let message = arr[0]["message"] as! String
                 let user = arr[0]["user"] as! String
-                self.chatLabel.text = self.chatLabel.text! + "\n\(user) : \(message)"
                 
-                // auto scroll the text view with an animation
-                let range = NSMakeRange(self.chatLabel.text.characters.count - 1, 0)
-                self.chatLabel.scrollRangeToVisible(range)
+                self.messagePump(msg: "\(user) : \(message)")
                 
                 print("\n\(user): \(message)")
             }
+        }
+        
+        // another user connected
+        socket?.on("otherUserConnect") { data, ack in
+            let arr = data as! [String]
+            self.messagePump(msg: "\(arr[0]) connected")
+        }
+        
+        // another user disconnected
+        socket?.on("otherUserDisconnect") { data, ack in
+            let arr = data as! [String]
+            self.messagePump(msg: "\(arr[0]) disconnected")
         }
     }
 
     // register socket handlers for connection events
     func addConnectionHandlers() {
+        
+        // connected to server
         socket?.on("connect") { data, ack in
             // TODO: connection status light
             print("### -- SOCKET CONNECTED                -- ###")
@@ -76,22 +96,26 @@ class ChatViewController: UIViewController {
             self.socket?.emit("user", self.username!)
         }
         
+        // server disconnected
         socket?.on("disconnect") { data, ack in
             // TODO: implement purposeful disconnect?
             print("### -- SOCKET DISCONNECTED             -- ###")
         }
-        
+
+        // can't connect to server
         socket?.on("error") { data, ack in
-            // TODO: display an error message
+            self.messagePump(msg: "Chat server is offline :(")
             print("### -- SOCKET ERROR                    -- ###")
         }
         
+        // before trying to reconnect
         socket?.on("reconnect") { data, ack in
             // TODO: something before a reconnect
             print("### -- SOCKET BEFORE RECONNECT ATTEMPT -- ###")
             
         }
         
+        // at the time of reconnect attempt
         socket?.on("reconnectAttempt") { data, ack in
             // TODO: something while attempting reconnecting
             print("### -- SOCKET RECONNECT ATTEMPT        -- ###")
